@@ -25,7 +25,7 @@
 		<!--[if lte IE 8]><script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js"></script><![endif]-->
 		<?php wp_head(); ?>
 	</head>
-	<body>
+	<body <?php body_class(); ?>>
 
 		<!-- Header -->
 			<div id="header-wrapper">
@@ -37,6 +37,7 @@
 								<h1><a href="<?php echo home_url();?>" id="logo"><?php bloginfo('name'); ?></a></h1>
 							
 							<!-- Nav -->
+								<?php //wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 								<nav id="nav">
 									<a href="index.html">Homepage</a>
 									<a href="threecolumn.html">Three Column</a>
@@ -48,6 +49,7 @@
 						</div>
 					</div>
 				</header>
+				<?php echo get_post_meta('bannerhtml');?>
 				<div id="banner">
 					<div class="container">
 						<div class="row">
